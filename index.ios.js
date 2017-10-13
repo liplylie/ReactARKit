@@ -1,10 +1,6 @@
-// index.ios.js
-
 import React, { Component } from 'react';
-import { AppRegistry, View } from 'react-native';
+import { AppRegistry, View, Text } from 'react-native';
 import { ARKit } from 'react-native-arkit';
-
-const diffuse = '#88ff88cc';
 
 export default class ReactNativeARKit extends Component {
   render() {
@@ -21,66 +17,86 @@ export default class ReactNativeARKit extends Component {
           <ARKit.Box
             position={{ x: 0, y: 0, z: 0 }}
             shape={{ width: 0.1, height: 0.1, length: 0.1, chamfer: 0.01 }}
-            material={{ diffuse }}
           />
+      
           <ARKit.Sphere
             position={{ x: 0.2, y: 0, z: 0 }}
-            shape={{ radius: 0.05, }}
-            material={{ diffuse }}
+            shape={{ radius: 0.05 }}
           />
-          <ARKit.Cylinder
-            position={{ x: 0.4, y: 0, z: 0 }}
-            shape={{ radius: 0.05, height: 0.1 }}
-            material={{ diffuse }}
+         <ARKit.Model
+            position={{ x: -0.5, y: 5, z: 0, frame: 'local' }}
+            model={{
+              file: 'art.scnassets/head.psd', // make sure you have the model file in the ios project
+              scale: 0.01,
+            }}
           />
           <ARKit.Cone
             position={{ x: 0, y: 0.2, z: 0 }}
             shape={{ topR: 0, bottomR: 0.05, height: 0.1 }}
-            material={{ diffuse }}
           />
           <ARKit.Pyramid
             position={{ x: 0.2, y: 0.15, z: 0 }}
             shape={{ width: 0.1, height: 0.1, length: 0.1 }}
-            material={{ diffuse }}
+          />
+          <ARKit.Pyramid
+            position={{ x: 1.2, y: 1.15, z: 0 }}
+            shape={{ width: 0.1, height: 0.1, length: 0.1 }}
           />
           <ARKit.Tube
             position={{ x: 0.4, y: 0.2, z: 0 }}
             shape={{ innerR: 0.03, outerR: 0.05, height: 0.1 }}
-            material={{ diffuse }}
           />
           <ARKit.Torus
             position={{ x: 0, y: 0.4, z: 0 }}
             shape={{ ringR: 0.06, pipeR: 0.02 }}
-            material={{ diffuse }}
+          />
+          <ARKit.Pyramid
+            position={{ x: 1.2, y: 1.15, z: 0 }}
+            shape={{ width: 0.1, height: 0.1, length: 0.1 }}
           />
           <ARKit.Capsule
             position={{ x: 0.2, y: 0.4, z: 0 }}
             shape={{ capR: 0.02, height: 0.06 }}
-            material={{ diffuse }}
           />
           <ARKit.Plane
             position={{ x: 0.4, y: 0.4, z: 0 }}
             shape={{ width: 0.1, height: 0.1 }}
-            material={{ diffuse }}
-          />
-          <ARKit.Text
-            text="ARKit is Cool!"
-            position={{ x: 0.2, y: 0.6, z: 0 }}
-            eulerAngles={{ y: 3.14 / 6 }}
-            font={{ size: 0.15, depth: 0.05 }}
-            material={{ diffuse }}
-          />
-          <ARKit.Text
-            text="made by react-native-arkit"
-            frame="FrontOfCamera"
-            position={{ x: 0, y: 0, z: 0 }}
-
-            font={{ size: 0.01, depth: 0.002 }}
-            material={{ diffuse: 'blue' }}
           />
           <ARKit.Model
-            position={{ x: -0.2, y: 0, z: 0 }}
-            model={{ file: 'art.scnassets/ship.scn', scale: 0.03 }}
+            position={{ x: -0.2, y: 0, z: 0, frame: 'local' }}
+            model={{
+              file: 'art.scnassets/head.copy.scn', // make sure you have the model file in the ios project
+              scale: 0.01,
+            }}
+          />
+          <ARKit.Model
+            position={{ x: 0, y: 0, z: 0, frame: 'local' }}
+            model={{
+              file: 'art.scnassets/head.dae', // make sure you have the model file in the ios project
+              scale: 0.01,
+            }}
+          />
+          <ARKit.Model
+            position={{ x: -1, y: 0, z: 0, frame: 'local' }}
+            model={{
+              file: 'art.scnassets/head.dae', // make sure you have the model file in the ios project
+              scale: 0.001,
+            }}
+          />
+            <ARKit.Model
+            position={{ x: -1.4, y: 0, z: 0, frame: 'local' }}
+            model={{
+              file: 'art.scnassets/head.dae', // make sure you have the model file in the ios project
+              scale: 0.05,
+            }}
+          />
+          
+          
+
+         <ARKit.Text
+            text="change"
+            position={{ x: 0.2, y: 0.6, z: 0 }}
+            font={{ size: 0.15, depth: 0.05 }}
           />
         </ARKit>
       </View>
@@ -89,3 +105,47 @@ export default class ReactNativeARKit extends Component {
 }
 
 AppRegistry.registerComponent('ReactNativeARKit', () => ReactNativeARKit);
+
+// <ARKit.Box
+//             position={{ x: 0, y: 0, z: 0 }}
+//             shape={{ width: 0.1, height: 0.1, length: 0.1, chamfer: 0.01 }}
+//           />
+//           <ARKit.Sphere
+//             position={{ x: 0.2, y: 0, z: 0 }}
+//             shape={{ radius: 0.05 }}
+//           />
+//           <ARKit.Cylinder
+//             position={{ x: 0.4, y: 0, z: 0 }}
+//             shape={{ radius: 0.05, height: 0.1 }}
+//           />
+//           <ARKit.Cone
+//             position={{ x: 0, y: 0.2, z: 0 }}
+//             shape={{ topR: 0, bottomR: 0.05, height: 0.1 }}
+//           />
+//           <ARKit.Pyramid
+//             position={{ x: 0.2, y: 0.15, z: 0 }}
+//             shape={{ width: 0.1, height: 0.1, length: 0.1 }}
+//           />
+//           <ARKit.Tube
+//             position={{ x: 0.4, y: 0.2, z: 0 }}
+//             shape={{ innerR: 0.03, outerR: 0.05, height: 0.1 }}
+//           />
+//           <ARKit.Torus
+//             position={{ x: 0, y: 0.4, z: 0 }}
+//             shape={{ ringR: 0.06, pipeR: 0.02 }}
+//           />
+//           <ARKit.Capsule
+//             position={{ x: 0.2, y: 0.4, z: 0 }}
+//             shape={{ capR: 0.02, height: 0.06 }}
+//           />
+//           <ARKit.Plane
+//             position={{ x: 0.4, y: 0.4, z: 0 }}
+//             shape={{ width: 0.1, height: 0.1 }}
+//           />
+ // <ARKit.Model
+ //            position={{ x: -0.2, y: 0, z: 0, frame: 'local' }}
+ //            model={{
+ //              file: 'art.scnassets/ship.scn', // make sure you have the model file in the ios project
+ //              scale: 0.01,
+ //            }}
+ //          />
